@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+/*
+int a;
+cin>>a;
+cout<<"size of int a "<<sizeof(a)<<endl;//4byte
+
+float b;
+cin>>b;
+cout<<"size of float b "<<sizeof(b)<<endl;//4byte
+
+double e;
+cin>>e;
+cout<<"size of double e "<<sizeof(e)<<endl;//8byte
+
+char c;
+cin>>c;
+cout<<"size of char c " <<sizeof(c)<<endl;//1byte
+
+bool d;//1bit
+cin>>d;
+cout<<"size of bool d " <<sizeof(d)<<endl;//1byte
+
+*/
+//Typecasting
+
+int n ='P';
+cout<<n<<endl ;
+//ASCII
+
+char ch = 97;
+cout<<ch;
+
+
+return 0;
+}
