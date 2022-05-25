@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+int Factorial(int n){//Factorial
+	int fakt = 1;
+	for(int i=1;i<=n;i++){
+		fakt = fakt*i;
+	}
+	return fakt;
+}
+
+int Combination(int n,int r){//Factorial implement in Combination formula
+	int num = Factorial(n);
+	int denom = Factorial(r)*Factorial(n-r);
+	int ans = num/denom;
+	return ans;
+}
+
+int main(){//According to I/O
+	int n,r;
+	
+	cout<<"n: ";
+	cin>>n;
+	
+	cout<<"r: ";
+	cin>>r;
+	
+	cout<<"Formula of nCr is = n!/(r!*(n-r)!)"<<endl;
+	cout<<"nCr: "<<Combination(n,r);
+
+return 0;
+}
