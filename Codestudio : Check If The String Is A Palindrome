@@ -1,0 +1,41 @@
+bool isValid(char s){//Code to identify valid and invalid character
+    if((s>='a' && s<='z') || (s>='A' && s<='Z') || (s>='0' && s<='9')){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+char tolow(char s){//Code to convert into lowercase
+    if((s >= 'a' && s <= 'z') || (s>='0' && s<='9')){
+        return s;
+    }
+    else{
+        int temp = s -'A' + 'a';
+        return temp;
+    }
+}
+
+bool checkPalindrome(string s){//Code to check palindrome
+    int st = 0;
+    int e = s.length()-1;
+    
+    for(int i=0;i<=s.size();i++){
+        if(!isValid(s[st])){
+            st++;
+        }
+        else if(!isValid(s[e])){
+            e--;
+        }
+        else{
+            if(tolow(s[st]) != tolow(s[e])){
+                return false;
+            }
+            else{
+                st++;
+                e--;
+            }
+        }
+}
+    return true;
+}
