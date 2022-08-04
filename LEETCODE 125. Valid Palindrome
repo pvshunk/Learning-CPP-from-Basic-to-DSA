@@ -1,0 +1,80 @@
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+Given a string s, return true if it is a palindrome, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+Example 2:
+
+Input: s = "race a car"
+Output: false
+Explanation: "raceacar" is not a palindrome.
+Example 3:
+
+Input: s = " "
+Output: true
+Explanation: s is an empty string "" after removing non-alphanumeric characters.
+Since an empty string reads the same forward and backward, it is a palindrome.
+
+ANS:
+
+class Solution {
+private:
+    bool valid(char v){//Firstly to take only valid character
+        if((v >= 'a' && v <='z') || (v >='A' && v <='Z') || (v>='0' && v<='9')){
+            return 1; 
+        }
+        else{
+            return 0;
+        }
+    }
+    
+    char lowercase(char lw){//This function makes into lowercase
+        if((lw >='a' && lw <='z') || (lw >='0' && lw <='9')){
+            return lw;
+        }
+        else{
+            return(lw - 'A' + 'a');
+        }
+    }
+    
+    
+    bool checkPalindrome(string cp){//This program to check palindrome
+    int st = 0;
+    int e = cp.length()-1;
+    
+    while(st<=e){
+        if((cp[st]) != cp[e]){
+                return false;
+            }
+            else{
+                st++;
+                e--;
+            }
+    }
+    return true;
+}
+    
+public:
+    bool isPalindrome(string s) {//To apply every program in this function
+        string temp = "";
+        
+        for(int i=0;i<s.length();i++){
+            if(valid(s[i])){//To apply validation and check
+                temp.push_back(s[i]);
+            }
+        }
+        
+        for(int j = 0;j<temp.length();j++){
+            temp[j] = lowercase(temp[j]);//To apply into lowercase
+        }
+        
+        return checkPalindrome(temp);//After everything to check it is palindrome
+        
+    }
+};
